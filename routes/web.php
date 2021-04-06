@@ -23,3 +23,5 @@ use App\Http\Controllers\CarsController;
 // Route::get('/posts', [PostController::class, 'index']);
 
 Route::resource('/cars', CarsController::class);
+
+Route::get('/cars.create', [CarsController::class], 'create');

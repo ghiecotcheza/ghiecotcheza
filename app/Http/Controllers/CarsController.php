@@ -13,15 +13,17 @@ class CarsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        //SELECT * FROM cars
-        $cars= Car::all();
-     
-        return view('cars.index',[
-            'cars' =>$cars
+    {
+        //queries examples:
+        $cars = Car::all();
+        //$cars = Car::where('name', '=', 'Audi')
+        //->firstOrFail();
+        //print_r(Car::where('name', 'Audi')->count());
+        // print_r(Car::all()->count());
+        // print_r(Car::sum('founded'));
+        return view('cars.index', [
+            'cars' => $cars
         ]);
-
-        
     }
 
     /**
@@ -31,7 +33,9 @@ class CarsController extends Controller
      */
     public function create()
     {
-        //
+        //inserting data
+        return view('cars.create');
+
     }
 
     /**
