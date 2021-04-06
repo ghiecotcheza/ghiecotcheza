@@ -10,8 +10,11 @@ class PostController extends Controller
     public function index(){
      $id = 5; 
     $posts = DB::table ('posts')
-            ->orderBy('created_at', 'desc')
-            ->first();
+            ->where('id', '=', 5)
+            ->update([
+                'title' => 'New title', 'body' =>'Updated body'
+            ]);
+            
     dd($posts);
    }
 }
