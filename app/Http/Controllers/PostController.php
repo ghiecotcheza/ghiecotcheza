@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class PostController extends Controller
 {
     public function index(){
-     $id = 3; 
+     $id = 5; 
     $posts = DB::table ('posts')
             ->orderBy('created_at', 'desc')
             ->first();
