@@ -24,4 +24,8 @@ use App\Http\Controllers\CarsController;
 
 Route::resource('/cars', CarsController::class);
 
-Route::get('/cars.create', [CarsController::class], 'create');
+Route::get('/cars/{car}/edit', [CarsController::class, 'edit' ]);
+
+//Route::put('/cars.{id}.edit', [CarsController::class], 'update');
+
+//Route::put('/cars', 'CarsController@update');
