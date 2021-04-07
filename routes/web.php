@@ -28,3 +28,4 @@ Route::get('/cars/{id}/edit', [CarsController::class, 'edit' ]);
 
 Route::put('/cars/{id}/edit', [CarsController::class, 'update']);
 
+Route::get('/cars/{id}/show', [CarsController::class, 'show']);

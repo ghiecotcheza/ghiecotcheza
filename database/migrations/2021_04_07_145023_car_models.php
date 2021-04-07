@@ -13,7 +13,17 @@ class CarModels extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('car_models', function (Blueprint $table)
+        {
+            $table-> increments('id');
+            $table->unsignedInteger('car_id');
+            $table->string('model_name');
+            $table->timestamps();
+            $table->foreign('car_id')
+                ->references('id')
+                ->on('çars')
+                ->onDelete('cascade');
+        });
     }
 
     /**

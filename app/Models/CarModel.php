@@ -10,7 +10,7 @@ class CarModel extends Model
 {
     use HasFactory;
 
-    protected $table = 'cars_models';
+    protected $table = 'car_models';
 
     protected $primaryKey = 'id';
 

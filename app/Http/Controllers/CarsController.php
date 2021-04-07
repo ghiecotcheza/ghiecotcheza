@@ -21,6 +21,7 @@ class CarsController extends Controller
     {
 
         return view('cars.create');
+        
     }
 
     public function store(Request $request)
@@ -30,7 +31,7 @@ class CarsController extends Controller
             'founded' => $request->input('founded'),
             'description' => $request->input('description')
         ]);
-        return redirect()->back();
+        return redirect('/cars');
     }
 
     public function show($id)

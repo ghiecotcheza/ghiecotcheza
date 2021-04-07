@@ -1,9 +1,6 @@
 @extends('layout.app')
 
-@foreach ($cars as $car )
-{{ $car->name}}
-    
-@endforeach
+
 
 @section('content')
     <div class="m-auto w-4/5 py-24">
@@ -25,8 +22,7 @@
                             href="{{ url('/cars/' . $car->id . '/edit') }}">
                             Edit &rarr;
                         </a>
-                        <form action="{{ url('/cars/' . $car->id) }}" class="pt-3"
-                            method="POST" >
+                        <form action="{{ url('/cars/' . $car->id) }}" class="pt-3" method="POST" >
                             @csrf
                             @method('delete')
                             <button type="submit" class="border-b-2 pb-2 border-dotted italic text-red-500">
@@ -38,28 +34,14 @@
                         Founded:{{ $car->founded }}
                     </span>
                     <h2 class="text-gray-700 text-5xl hover:text-gray-500">
-                        <a href="{{ '/cars/'.$car->id }}">
+                        <a href="{{ '/cars/'. $car->id . '/show' }}">
                             {{ $car->name }}
                         </a>   
                     </h2>
                     <p class="text-lg text-gray-700 py=6">
                        {{ $car->description }}
                     </p>
-                    <ul>
-                        <p class="text-lg text-gray-700 py-3">
-                            Models:
-                        </p>
-                        @forelse ($car->CarModel as $model)
-                            <li class="inline italic text-gray-600 px-1 py-6">
-                               {{ $model['model_name'] }}
-                            </li>
-                            
-                        @empty
-                            <p>
-                                No car model found
-                            </p>
-                        @endforelse
-                    </ul>
+                   
                     <hr class="mt-4 mb-8">
                 </div>
             @endforeach
